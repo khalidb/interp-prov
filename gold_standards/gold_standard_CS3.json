@@ -1,0 +1,156 @@
+{
+  "caseStudy": "CS3",
+  "reference": "Li Y, Zhou X, Liu J, Yin Y, Yuan X, Yang R, Wang Q, Ji J, He Q. (2020). Differentially expressed genes and key molecules of BRCA1/2-mutant breast cancer: evidence from bioinformatics analyses. PeerJ 8:e8403. DOI: 10.7717/peerj.8403",
+  "constructionMode": "manual",
+
+  "analyticalContext": {
+    "contextId": "AC-CS3",
+    "studyTitle": "Differentially expressed genes and key molecules of BRCA1/2-mutant breast cancer: evidence from bioinformatics analyses",
+    "doi": "10.7717/peerj.8403",
+    "publicationYear": 2020,
+    "analysisType": "Multi-layer bioinformatics analysis comprising gene set enrichment analysis, three-comparison differential expression analysis, protein-protein interaction network construction, survival analysis, and diagnostic performance evaluation",
+    "studySubject": "Gene expression profiles and molecular interaction networks in BRCA1/2-mutant breast cancer",
+    "studyContext": "Biomarker discovery",
+    "dataSource": "The Cancer Genome Atlas (TCGA) via GDC portal; RNA-Seq dataset comprising 42 BRCA1/2-mutant breast cancer patients (MUT group), 117 wild-type breast cancer patients (WT group), and 112 para-carcinoma normal tissue samples (control group); mutation status confirmed via cBioPortal (TCGA Provisional and TCGA PanCancer Atlas)",
+    "unitsOfAnalysis": "Individual breast cancer patient samples grouped into three comparison groups: BRCA1/2-mutant breast cancer tissue (MUT, n=42), wild-type breast cancer tissue (WT, n=117), and para-carcinoma normal tissue (control, n=112)"
+  },
+
+  "evidenceItems": [
+    {
+      "evidenceId": "EI-CS3-01",
+      "evidenceType": "ECO:0000051",
+      "value": "Cell cycle regulation gene sets significantly enriched in BRCA1/2-mutant vs. wild-type breast cancer across all three MSigDB collections; enriched processes include G1/S transition, mitotic spindle organisation, cell cycle checkpoint, E2F targets, and G2M checkpoint (NOM p-value < 0.05, FDR < 0.25)",
+      "strength": "moderate",
+      "selectedByAgent": true
+    },
+    {
+      "evidenceId": "EI-CS3-02",
+      "evidenceType": "ECO:0000051",
+      "value": "294 DEGs identified between BRCA1/2-mutant and wild-type breast cancer (199 upregulated, 95 downregulated) at |log2FC| ≥ 1 and FDR < 0.05",
+      "strength": "high",
+      "selectedByAgent": true
+    },
+    {
+      "evidenceId": "EI-CS3-03",
+      "evidenceType": "ECO:0000051",
+      "value": "43 genes differentially expressed across all three pairwise comparisons (MUT vs. WT, MUT vs. control, WT vs. control), showing amplified dysregulation in BRCA1/2-mutant breast cancer relative to both wild-type cancer and normal tissue",
+      "strength": "high",
+      "selectedByAgent": true
+    },
+    {
+      "evidenceId": "EI-CS3-04",
+      "evidenceType": "ECO:0000051",
+      "value": "PPI network of 294 DEGs yielded 209 nodes and 498 edges; 12-method topological analysis identified five hub genes: ALB, CDKN1A, CCNE1, MYOM2, KRT20; CCNE1 and KRT20 upregulated in BRCA1/2-mutant breast cancer",
+      "strength": "moderate",
+      "selectedByAgent": true
+    },
+    {
+      "evidenceId": "EI-CS3-05",
+      "evidenceType": "ECO:0000051",
+      "value": "Kaplan-Meier survival analysis of six genes from the 43-gene overlapping set shows significant overall survival associations: CCNE1 (HR=1.74, p=4.1e-07), TTK (HR=1.65, p=4.5e-06), NPBWR1 (HR=1.57, p=0.0044), A2ML1 (HR=1.59, p=0.0038), MAOA (HR=0.79, p=0.029), SLC4A4 (HR=0.81, p=0.048)",
+      "strength": "high",
+      "selectedByAgent": true
+    },
+    {
+      "evidenceId": "EI-CS3-06",
+      "evidenceType": "ECO:0000051",
+      "value": "ROC analysis distinguishing BRCA1/2-mutant from wild-type breast cancer: TTK AUC=0.731, A2ML1 AUC=0.692, CCNE1 AUC=0.690, EXO1 AUC=0.684, NPBWR1 AUC=0.671, C4orf51 AUC=0.633 (all p < 0.05)",
+      "strength": "moderate",
+      "selectedByAgent": true
+    },
+    {
+      "evidenceId": "EI-CS3-07",
+      "evidenceType": "ECO:0000059",
+      "value": "Expression level changes of CCNE1, TTK, and EXO1 remain directionally consistent and statistically significant across White and African American ethnic subgroups; Asian subgroup inconclusive due to insufficient sample size",
+      "strength": "moderate",
+      "selectedByAgent": true
+    }
+  ],
+
+  "interpretiveActivity": {
+    "activityId": "IA-CS3-HUMAN",
+    "analyticalStance": "N/A (human authored)",
+    "repetitionNumber": 1,
+    "availableEvidenceCount": 7,
+    "selectedEvidenceCount": 7,
+    "reconstructionMode": "retrospective"
+  },
+
+  "agent": {
+    "agentId": "AGT-CS3-HUMAN",
+    "agentType": "human",
+    "agentName": "Li et al. (2020)",
+    "promptTemplateId": null,
+    "promptTemplateVersion": null,
+    "modelVersion": null,
+    "decodingPolicy": null,
+    "role": "corresponding author"
+  },
+
+  "scientificClaim": {
+    "claimId": "SC-CS3-01",
+    "claimText": "CCNE1, TTK, and EXO1 constitute candidate diagnostic biomarkers for distinguishing BRCA1/2-mutant from wild-type breast cancer, with CCNE1 and TTK additionally showing prognostic value for breast cancer broadly; cell cycle dysregulation is the primary biological mechanism linking BRCA1/2 mutations to altered gene expression in this cancer subtype; all candidates require validation by molecular biological experiments before clinical application.",
+    "claimScope": "candidate",
+    "confidence": 0.80,
+    "derivedFromEvidence": [
+      "EI-CS3-01",
+      "EI-CS3-02",
+      "EI-CS3-03",
+      "EI-CS3-04",
+      "EI-CS3-05",
+      "EI-CS3-06",
+      "EI-CS3-07"
+    ]
+  },
+
+  "rationaleArtifact": {
+    "rationaleId": "RA-CS3-01",
+    "rationaleText": "GSEA enrichment of cell cycle regulation gene sets across all three MSigDB collections establishes that BRCA1/2 mutations systematically dysregulate the cell division machinery, providing biological framing for the candidate gene results. Three-layer differential expression analysis identifies 294 mutation-specific DEGs and a higher-confidence 43-gene overlapping set whose expression is amplified in BRCA1/2-mutant relative to both wild-type cancer and normal tissue. PPI topological analysis independently identifies CCNE1 as a highly connected hub gene, directly linking the network result to the cell cycle enrichment finding through CCNE1's role in G1/S transition. Survival analysis identifies six genes from the 43-gene set with significant overall survival associations, with CCNE1 (HR=1.74) and TTK (HR=1.65) showing the strongest prognostic signal. ROC analysis distinguishing BRCA1/2-mutant from wild-type breast cancer yields AUC values above 0.630 for six genes, with TTK (0.731), CCNE1 (0.690), and EXO1 (0.684) showing the highest diagnostic performance. Ethnic subgroup analysis confirms directional consistency of CCNE1, TTK, and EXO1 expression across White and African American patients, partially supporting generalisability. The convergence of hub gene status, survival significance, and diagnostic performance across CCNE1, TTK, and EXO1 establishes these three genes as the primary candidate biomarkers, with CCNE1 and TTK carrying additional mechanistic support from the cell cycle enrichment results.",
+    "uncertainties": [
+      "The BRCA1/2-mutant group comprises only 42 patients, limiting statistical power and potentially making DEG results sensitive to the specific samples included.",
+      "Survival analysis was performed on the full breast cancer population rather than the BRCA1/2-mutant subgroup due to insufficient mutant sample size; the prognostic claim does not directly address the primary study population.",
+      "Somatic and germline BRCA1/2 mutations are not distinguished in the MUT group; these mutation types are biologically distinct and may differ in their effects on gene expression and clinical outcomes.",
+      "TCGA data is predominantly derived from White patients; Asian subgroup analysis is inconclusive due to insufficient sample size, limiting assessment of ethnic generalisability.",
+      "No molecular biological, cellular, or animal-level experimental validation was performed; all candidates require further validation before clinical application."
+    ],
+    "generatedBy": "IA-CS3-HUMAN"
+  },
+
+  "humanReasoningTrace": {
+    "traceId": "HRT-CS3-01",
+    "reconstructionMode": "retrospective",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "stepDescription": "Establish biological context through GSEA: cell cycle regulation gene sets are significantly enriched in BRCA1/2-mutant vs. wild-type breast cancer across all three MSigDB collections, demonstrating that BRCA1/2 mutations produce a coherent pathway-level signal centred on cell division and proliferation.",
+        "evidenceUsed": ["EI-CS3-01"]
+      },
+      {
+        "stepNumber": 2,
+        "stepDescription": "Identify the mutation-specific gene expression signal: 294 DEGs between BRCA1/2-mutant and wild-type breast cancer define the primary candidate pool and establish the molecular basis for distinguishing mutation-bearing from wild-type tumours.",
+        "evidenceUsed": ["EI-CS3-02"]
+      },
+      {
+        "stepNumber": 3,
+        "stepDescription": "Refine the candidate pool through two parallel procedures: three-comparison Venn analysis identifies 43 genes with amplified dysregulation specific to BRCA1/2-mutant breast cancer; PPI topological analysis of the 294 DEGs independently identifies CCNE1 as a highly connected hub gene, linking network structure to the cell cycle enrichment finding from step 1.",
+        "evidenceUsed": ["EI-CS3-03", "EI-CS3-04"]
+      },
+      {
+        "stepNumber": 4,
+        "stepDescription": "Apply prognostic and diagnostic filters: survival analysis identifies six genes from the 43-gene set with significant overall survival associations, with CCNE1 (HR=1.74) and TTK (HR=1.65) showing the strongest prognostic signal; ROC analysis identifies TTK (AUC=0.731), CCNE1 (AUC=0.690), and EXO1 (AUC=0.684) as the top diagnostic performers for distinguishing BRCA1/2-mutant from wild-type breast cancer.",
+        "evidenceUsed": ["EI-CS3-05", "EI-CS3-06"]
+      },
+      {
+        "stepNumber": 5,
+        "stepDescription": "Identify primary candidates through convergence: CCNE1, TTK, and EXO1 are selected as the primary biomarker candidates because they appear with consistent evidence across the largest number of analytical layers; CCNE1 and TTK carry additional support from hub gene status and survival associations, while EXO1 is supported by diagnostic performance and its established role in BRCA-related DNA repair.",
+        "evidenceUsed": ["EI-CS3-03", "EI-CS3-04", "EI-CS3-05", "EI-CS3-06"]
+      },
+      {
+        "stepNumber": 6,
+        "stepDescription": "Defend generalisability: directional consistency of CCNE1, TTK, and EXO1 expression across White and African American ethnic subgroups partially supports generalisability beyond the predominantly White TCGA dataset; Asian subgroup analysis is inconclusive due to insufficient sample size.",
+        "evidenceUsed": ["EI-CS3-07"]
+      }
+    ],
+    "alignsWith": "SC-CS3-01"
+  }
+}

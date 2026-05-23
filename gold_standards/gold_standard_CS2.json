@@ -1,0 +1,141 @@
+{
+  "caseStudy": "CS2",
+  "reference": "Cui et al. (2021). High heterogeneity undermines generalization of differential expression results in RNA-Seq analysis. Human Genomics. DOI: 10.1186/s40246-021-00308-5",
+  "constructionMode": "manual",
+
+  "analyticalContext": {
+    "contextId": "AC-CS2",
+    "studyTitle": "High heterogeneity undermines generalization of differential expression results in RNA-Seq analysis",
+    "doi": "10.1186/s40246-021-00308-5",
+    "publicationYear": 2021,
+    "analysisType": "Differential expression analysis",
+    "studySubject": "RNA-seq differential expression in cancer",
+    "studyContext": "Reproducibility assessment",
+    "dataSource": "The Cancer Genome Atlas (TCGA); datasets TCGA-BRCA (n=1177), TCGA-KIRC (n=610), TCGA-LUAD (n=592)",
+    "unitsOfAnalysis": "Tumour tissue samples and adjacent normal tissue samples from individual cancer patients"
+  },
+
+  "evidenceItems": [
+    {
+      "evidenceId": "EI-CS2-01",
+      "evidenceType": "ECO:0000051",
+      "value": "Overlap rate among four DE repeats below 40% for all three cancer types at maximum biological replicates",
+      "strength": "high",
+      "selectedByAgent": true
+    },
+    {
+      "evidenceId": "EI-CS2-02",
+      "evidenceType": "ECO:0000051",
+      "value": "Overlap rate among four DE repeats below 10% for all three cancer types at n=3 biological replicates",
+      "strength": "high",
+      "selectedByAgent": true
+    },
+    {
+      "evidenceId": "EI-CS2-03",
+      "evidenceType": "ECO:0000051",
+      "value": "DEG intersection detection power below 16% for all three cancer types at n=3; as low as 6% for LUAD",
+      "strength": "high",
+      "selectedByAgent": true
+    },
+    {
+      "evidenceId": "EI-CS2-04",
+      "evidenceType": "ECO:0000059",
+      "value": "More than half of non-common DEGs show percent CV above 100% in tumour groups; three cases exceed 300%",
+      "strength": "moderate",
+      "selectedByAgent": true
+    },
+    {
+      "evidenceId": "EI-CS2-05",
+      "evidenceType": "ECO:0000059",
+      "value": "Excluding outlier counts causes 8 of 10 non-common DEGs in BRCA to become common DEGs across repeats",
+      "strength": "moderate",
+      "selectedByAgent": true
+    },
+    {
+      "evidenceId": "EI-CS2-06",
+      "evidenceType": "ECO:0000059",
+      "value": "35 of 3079 common DEGs between repeat II and III in BRCA show opposite log2FC direction across repeats (~1.14%)",
+      "strength": "moderate",
+      "selectedByAgent": true
+    }
+  ],
+
+  "interpretiveActivity": {
+    "activityId": "IA-CS2-HUMAN",
+    "analyticalStance": "N/A (human authored)",
+    "repetitionNumber": 1,
+    "availableEvidenceCount": 6,
+    "selectedEvidenceCount": 6,
+    "reconstructionMode": "retrospective"
+  },
+
+  "agent": {
+    "agentId": "AGT-CS2-HUMAN",
+    "agentType": "human",
+    "agentName": "Cui et al. (2021)",
+    "promptTemplateId": null,
+    "promptTemplateVersion": null,
+    "modelVersion": null,
+    "decodingPolicy": null,
+    "role": "corresponding author"
+  },
+
+  "scientificClaim": {
+    "claimId": "SC-CS2-01",
+    "claimText": "High tumour heterogeneity causes poor reproducibility of differential expression results across independent RNA-Seq experiments, even at relatively large sample sizes, and therefore DE results should not be generalised without independent validation and sample sizes of at least ten biological replicates per condition.",
+    "claimScope": "exploratory",
+    "confidence": 0.85,
+    "derivedFromEvidence": [
+      "EI-CS2-01",
+      "EI-CS2-02",
+      "EI-CS2-03",
+      "EI-CS2-04",
+      "EI-CS2-05",
+      "EI-CS2-06"
+    ]
+  },
+
+  "rationaleArtifact": {
+    "rationaleId": "RA-CS2-01",
+    "rationaleText": "Poor reproducibility of DE results is demonstrated by overlap rates below 40% at maximum sample size and below 10% at n=3 across all three cancer types, with detection power below 16% at n=3. The mechanistic cause is high gene expression variability within cancer types, evidenced by percent CV values exceeding 100% in more than half of non-common DEGs and exceeding 300% in three cases. Outlier counts account for part of this variability, as their removal converts 8 of 10 non-common DEGs to common DEGs, but residual non-reproducibility persists. The problem extends to regulatory direction: approximately 1.14% of common DEGs show opposite fold-change direction across independent repeats. Together, these results establish that tumour heterogeneity undermines DE result generalisation regardless of sample size, and that studies with fewer than ten biological replicates per condition are particularly unreliable.",
+    "uncertainties": [
+      "The reference set of true DEGs is approximated by the DEG intersection or union at maximum sample size; no empirical ground truth is available.",
+      "The relative contributions of biological variation and outlier counts to expression heterogeneity are not quantified; the authenticity of extreme outlier counts is not established.",
+      "Empirical results derive from three TCGA cancer types; generalisability to other cancer types and non-TCGA data sources is assumed but not demonstrated."
+    ],
+    "generatedBy": "IA-CS2-HUMAN"
+  },
+
+  "humanReasoningTrace": {
+    "traceId": "HRT-CS2-01",
+    "reconstructionMode": "retrospective",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "stepDescription": "Establish that overlap rates fall below 40% at maximum sample size and below 10% at n=3 across all three cancer types, demonstrating that poor reproducibility is not confined to small sample sizes.",
+        "evidenceUsed": ["EI-CS2-01", "EI-CS2-02"]
+      },
+      {
+        "stepNumber": 2,
+        "stepDescription": "Quantify detection power loss: at n=3, fewer than 16% of reference DEGs are recovered, establishing that small studies miss the large majority of the true signal.",
+        "evidenceUsed": ["EI-CS2-03"]
+      },
+      {
+        "stepNumber": 3,
+        "stepDescription": "Attribute the mechanistic cause to high biological variability: percent CV values exceeding 100% in more than half of non-common DEGs show that gene expression levels vary so widely across patients that DE results are strongly sample-dependent.",
+        "evidenceUsed": ["EI-CS2-04"]
+      },
+      {
+        "stepNumber": 4,
+        "stepDescription": "Isolate outlier counts as a secondary contributing factor: excluding outliers converts 8 of 10 non-common DEGs to common DEGs, but residual non-reproducibility persists, preserving the primacy of the biological heterogeneity explanation.",
+        "evidenceUsed": ["EI-CS2-05"]
+      },
+      {
+        "stepNumber": 5,
+        "stepDescription": "Extend the reliability concern to regulatory direction: approximately 1.14% of common DEGs show opposite fold-change direction across independent repeats, establishing that the problem affects biological interpretation, not only DEG list composition.",
+        "evidenceUsed": ["EI-CS2-06"]
+      }
+    ],
+    "alignsWith": "SC-CS2-01"
+  }
+}

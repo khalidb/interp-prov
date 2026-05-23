@@ -1,0 +1,134 @@
+{
+  "caseStudy": "CS1",
+  "reference": "Kim, D.H. and Lee, K.E. (2022). Discovering Breast Cancer Biomarkers Candidates through mRNA Expression Analysis Based on The Cancer Genome Atlas Database. Journal of Personalized Medicine. DOI: 10.3390/jpm12101753",
+  "constructionMode": "manual",
+
+  "analyticalContext": {
+    "contextId": "AC-CS1",
+    "studyTitle": "Discovering Breast Cancer Biomarkers Candidates through mRNA Expression Analysis Based on The Cancer Genome Atlas Database",
+    "doi": "10.3390/jpm12101753",
+    "publicationYear": 2022,
+    "analysisType": "Differential expression analysis with diagnostic performance evaluation",
+    "studySubject": "mRNA differential expression and diagnostic performance in breast cancer",
+    "studyContext": "Biomarker discovery",
+    "dataSource": "The Cancer Genome Atlas (TCGA) via Firebrowse; TCGA-BRCA dataset comprising 526 breast cancer and 60 adjacent non-cancerous breast tissue samples",
+    "unitsOfAnalysis": "Individual breast tissue samples from TCGA-BRCA: 526 breast cancer tissue samples and 60 adjacent non-cancerous breast tissue samples"
+  },
+
+  "evidenceItems": [
+    {
+      "evidenceId": "EI-CS1-01",
+      "evidenceType": "ECO:0000051",
+      "value": "1,445 mRNAs identified as significantly differentially expressed at −log10(p) > 3 in both the 526 vs. 60 and the paired 60 vs. 60 comparisons, forming the intersection used for downstream analysis",
+      "strength": "high",
+      "selectedByAgent": true
+    },
+    {
+      "evidenceId": "EI-CS1-02",
+      "evidenceType": "ECO:0000051",
+      "value": "20 DE mRNAs identified with AUC ≥ 0.9 and p < 0.0001 from ROC curve analysis of 1,445 candidates; AUC range 0.90 (SPINT2) to 0.96 (ING3)",
+      "strength": "high",
+      "selectedByAgent": true
+    },
+    {
+      "evidenceId": "EI-CS1-03",
+      "evidenceType": "ECO:0000059",
+      "value": "14 of 20 selected mRNAs downregulated and 6 upregulated in breast cancer tissue, confirmed by heatmap hierarchical clustering",
+      "strength": "high",
+      "selectedByAgent": true
+    },
+    {
+      "evidenceId": "EI-CS1-04",
+      "evidenceType": "ECO:0000059",
+      "value": "SYF2 and DTWD1 decrease progressively across tumour stages I to IV; EPN3 increases progressively; ZNF8 is upregulated overall but decreases with advancing stage (all p < 0.05 to p < 0.01)",
+      "strength": "moderate",
+      "selectedByAgent": true
+    },
+    {
+      "evidenceId": "EI-CS1-05",
+      "evidenceType": "ECO:0000059",
+      "value": "TOMM40 highly expressed in TNBC vs. other subtypes; EPN3 highly expressed in HER2-expressing subtypes and downregulated in TNBC vs. other subtypes (p < 0.001)",
+      "strength": "moderate",
+      "selectedByAgent": true
+    }
+  ],
+
+  "interpretiveActivity": {
+    "activityId": "IA-CS1-HUMAN",
+    "analyticalStance": "N/A (human authored)",
+    "repetitionNumber": 1,
+    "availableEvidenceCount": 5,
+    "selectedEvidenceCount": 5,
+    "reconstructionMode": "retrospective"
+  },
+
+  "agent": {
+    "agentId": "AGT-CS1-HUMAN",
+    "agentType": "human",
+    "agentName": "Kim and Lee (2022)",
+    "promptTemplateId": null,
+    "promptTemplateVersion": null,
+    "modelVersion": null,
+    "decodingPolicy": null,
+    "role": "corresponding author"
+  },
+
+  "scientificClaim": {
+    "claimId": "SC-CS1-01",
+    "claimText": "Twenty DE mRNAs with AUC ≥ 0.9 identified from TCGA-BRCA data constitute candidate diagnostic biomarkers for breast cancer; among these, EPN3 shows the highest diagnostic potential due to its stage-correlated upregulation and subtype-specific expression pattern, but all 20 candidates require clinical validation before use as diagnostic markers.",
+    "claimScope": "candidate",
+    "confidence": 0.75,
+    "derivedFromEvidence": [
+      "EI-CS1-01",
+      "EI-CS1-02",
+      "EI-CS1-03",
+      "EI-CS1-04",
+      "EI-CS1-05"
+    ]
+  },
+
+  "rationaleArtifact": {
+    "rationaleId": "RA-CS1-01",
+    "rationaleText": "The dual-screen intersection strategy reduces 17,815 mRNAs to 1,445 robust DE candidates by requiring significance in both paired and unpaired comparisons. ROC curve analysis with AUC ≥ 0.9 further reduces this to 20 high-accuracy candidates, applying the standard classification in which AUC > 0.9 indicates highly accurate diagnostic performance. Heatmap hierarchical clustering confirms consistent directional expression patterns across samples, establishing the 20-gene signature as coherent and reproducible within this dataset. Stage-correlated expression in SYF2, DTWD1, ZNF8, and EPN3, and subtype-specific expression of TOMM40 and EPN3, extend the clinical relevance of the candidate list beyond simple tumour-versus-normal discrimination. EPN3 is elevated as the primary candidate because it is the only gene demonstrating significant results in both stage and subtype analyses, with expression patterns that distinguish TNBC from other subtypes and correlate with histopathological grade, supporting its potential utility in both diagnosis and treatment stratification.",
+    "uncertainties": [
+      "No clinical validation was performed at the sample, cellular, or animal level; results constitute preliminary data only.",
+      "The non-cancerous sample size (n=60) is substantially smaller than the cancer sample size (n=526), and normal samples derive from cancer patients rather than cancer-free individuals.",
+      "Expression patterns of SYF2, CPN2, and SPINT2 contradict findings from prior breast cancer and tumour studies; the discrepancy is noted but not resolved.",
+      "Prior literature is absent or insufficient for 11 of the 20 candidate genes, limiting contextualisation of the findings."
+    ],
+    "generatedBy": "IA-CS1-HUMAN"
+  },
+
+  "humanReasoningTrace": {
+    "traceId": "HRT-CS1-01",
+    "reconstructionMode": "retrospective",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "stepDescription": "Establish a robust candidate pool by requiring significance in both the unpaired 526 vs. 60 and the paired 60 vs. 60 comparisons, producing 1,445 DE mRNAs as the intersection and controlling for patient-level effects.",
+        "evidenceUsed": ["EI-CS1-01"]
+      },
+      {
+        "stepNumber": 2,
+        "stepDescription": "Apply AUC ≥ 0.9 threshold from ROC curve analysis to select 20 high-accuracy diagnostic candidates from the 1,445 pool, invoking the standard AUC classification to justify the threshold as the boundary of highly accurate diagnostic performance.",
+        "evidenceUsed": ["EI-CS1-02"]
+      },
+      {
+        "stepNumber": 3,
+        "stepDescription": "Confirm directional coherence of the 20-gene signature via heatmap hierarchical clustering, establishing that 14 genes are consistently downregulated and 6 consistently upregulated across the sample set, and that the signature partitions cancer from normal tissue reliably.",
+        "evidenceUsed": ["EI-CS1-03"]
+      },
+      {
+        "stepNumber": 4,
+        "stepDescription": "Identify clinically informative expression patterns: SYF2, DTWD1, ZNF8, and EPN3 show stage-correlated expression; TOMM40 and EPN3 show subtype-specific expression, with TOMM40 elevated in TNBC and EPN3 elevated in HER2-expressing subtypes and downregulated in TNBC.",
+        "evidenceUsed": ["EI-CS1-04", "EI-CS1-05"]
+      },
+      {
+        "stepNumber": 5,
+        "stepDescription": "Elevate EPN3 as the primary candidate based on convergent evidence across stage and subtype analyses: EPN3 is the only gene with significant results in both analyses, with stage-correlated upregulation and subtype-specific expression that distinguishes TNBC from other subtypes, supporting prioritisation in future validation studies.",
+        "evidenceUsed": ["EI-CS1-04", "EI-CS1-05"]
+      }
+    ],
+    "alignsWith": "SC-CS1-01"
+  }
+}
