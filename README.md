@@ -1,6 +1,6 @@
 # An Interpretive Provenance Model for Scientific Reasoning: A Computational Biology Study
 
-**Authors:** Khalid Belhajjame (LAMSADE, Université Paris-Dauphine, PSL Research University)
+**Authors:** Khalid Belhajjame and Yuyan Zhao (LAMSADE, Université Paris-Dauphine, PSL Research University)
 
 ---
 
@@ -152,7 +152,7 @@ If you use this work, please cite:
 
 ```bibtex
 @misc{belhajjame2026interpretive,
-  author = {Belhajjame, Khalid},
+  author = {Belhajjame, Khalid and Zhao, Yuyan},
   title  = {An Interpretive Provenance Model for Scientific Reasoning:
             A Computational Biology Study},
   year   = {2026},
@@ -171,6 +171,6 @@ Paper: © 2026 IEEE. Personal use permitted. For other uses contact IEEE.
 
 ## Contact
 
-Khalid Belhajjame  
-LAMSADE, Université Paris-Dauphine, PSL Research University  
-khalid.belhajjame@dauphine.fr
+Khalid Belhajjame — khalid.belhajjame@dauphine.fr  
+Yuyan Zhao — yuyan.zhao@dauphine.psl.eu  
+LAMSADE, Université Paris-Dauphine, PSL Research University
