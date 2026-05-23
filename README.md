@@ -1,7 +1,5 @@
 # An Interpretive Provenance Model for Scientific Reasoning: A Computational Biology Study
 
-**Target venue:** IEEE eScience 2026  
-**Submission deadline:** June 1, 2026  
 **Authors:** Khalid Belhajjame (LAMSADE, Université Paris-Dauphine, PSL Research University)
 
 ---
