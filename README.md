@@ -151,13 +151,12 @@ python3 evaluation/summarise_results.py
 If you use this work, please cite:
 
 ```bibtex
-@inproceedings{belhajjame2026interpretive,
-  author    = {Belhajjame, Khalid},
-  title     = {An Interpretive Provenance Model for Scientific Reasoning:
-               A Computational Biology Study},
-  booktitle = {Proceedings of the IEEE International Conference on
-               eScience (eScience 2026)},
-  year      = {2026}
+@misc{belhajjame2026interpretive,
+  author = {Belhajjame, Khalid},
+  title  = {An Interpretive Provenance Model for Scientific Reasoning:
+            A Computational Biology Study},
+  year   = {2026},
+  url    = {https://github.com/khalidb/interp-prov}
 }
 ```
 
